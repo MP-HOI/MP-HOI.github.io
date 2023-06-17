@@ -211,18 +211,25 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <video id="teaser" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/teaser.mp4" type="video/mp4" />
-          </video>
+          <!-- images/f3/png -->
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <figure class="image">
+                <img
+                  src="./static/images/f3.png"
+                  alt="DiffHOI teaser image"
+                  class="is-rounded"
+                />
+              </figure>
+            </div>
           <h2 class="subtitle has-text-centered">
-            <span class="dnerf">Nerfies</span> turns selfie videos from your
-            phone into free-viewpoint portraits.
+            Overview of <i>DiffHOI<\i>, comprising a pretrained human-object decoder, a novel interaction decoder, and CLIP-based object and interaction classifiers.
           </h2>
         </div>
       </div>
     </section>
 
-    <section class="hero is-light is-small">
+    <!-- <section class="hero is-light is-small">
       <div class="hero-body">
         <div class="container">
           <div id="results-carousel" class="carousel results-carousel">
@@ -341,7 +348,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="section">
       <div class="container is-max-desktop">
@@ -384,7 +391,7 @@
         <!--/ Abstract. -->
 
         <!-- Paper video. -->
-        <div class="columns is-centered has-text-centered">
+        <!-- <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Video</h2>
             <div class="publication-video">
@@ -396,7 +403,7 @@
               ></iframe>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--/ Paper video. -->
       </div>
     </section>
@@ -404,118 +411,26 @@
     <section class="section">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <!-- Visual Effects. -->
-          <div class="column">
-            <div class="content">
-              <h2 class="title is-3">Visual Effects</h2>
-              <p>
-                Using <i>nerfies</i> you can create fun visual effects. This
-                Dolly zoom effect would be impossible without nerfies since it
-                would require going through a wall.
-              </p>
-              <video
-                id="dollyzoom"
-                autoplay
-                controls
-                muted
-                loop
-                playsinline
-                height="100%"
-              >
-                <source
-                  src="./static/videos/dollyzoom-stacked.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-          </div>
-          <!--/ Visual Effects. -->
-
-          <!-- Matting. -->
-          <div class="column">
-            <h2 class="title is-3">Matting</h2>
-            <div class="columns is-centered">
-              <div class="column content">
-                <p>
-                  As a byproduct of our method, we can also solve the matting
-                  problem by ignoring samples that fall outside of a bounding
-                  box during rendering.
-                </p>
-                <video id="matting-video" controls playsinline height="100%">
-                  <source src="./static/videos/matting.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--/ Matting. -->
-
-        <!-- Animation. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Animation</h2>
-
-            <!-- Interpolating. -->
-            <h3 class="title is-4">Interpolating states</h3>
-            <div class="content has-text-justified">
-              <p>
-                We can also animate the scene by interpolating the deformation
-                latent codes of two input frames. Use the slider here to
-                linearly interpolate between the left frame and the right frame.
-              </p>
-            </div>
-            <div class="columns is-vcentered interpolation-panel">
-              <div class="column is-3 has-text-centered">
-                <img
-                  src="./static/images/interpolate_start.jpg"
-                  class="interpolation-image"
-                  alt="Interpolate start reference image."
-                />
-                <p>Start Frame</p>
-              </div>
-              <div class="column interpolation-video-column">
-                <div id="interpolation-image-wrapper">Loading...</div>
-                <input
-                  class="slider is-fullwidth is-large is-info"
-                  id="interpolation-slider"
-                  step="1"
-                  min="0"
-                  max="100"
-                  value="0"
-                  type="range"
-                />
-              </div>
-              <div class="column is-3 has-text-centered">
-                <img
-                  src="./static/images/interpolate_end.jpg"
-                  class="interpolation-image"
-                  alt="Interpolation end reference image."
-                />
-                <p class="is-bold">End Frame</p>
-              </div>
-            </div>
-            <br />
-            <!--/ Interpolating. -->
 
             <!-- Re-rendering. -->
-            <h3 class="title is-4">Re-rendering the input video</h3>
+            <h2 class="title is-4">SynHOI</h3>
             <div class="content has-text-justified">
               <p>
-                Using <span class="dnerf">Nerfies</span>, you can re-render a
-                video from a novel viewpoint such as a stabilized camera by
-                playing back the training deformations.
+                Generated HOI image samples for our SynHOI dataset.
               </p>
             </div>
             <div class="content has-text-centered">
               <video
                 id="replay-video"
+                autoplay
+                loop
                 controls
                 muted
                 preload
                 playsinline
-                width="75%"
+                width="100%"
               >
-                <source src="./static/videos/replay.mp4" type="video/mp4" />
+                <source src="./static/videos/SynHOI_vis.mp4" type="video/mp4" />
               </video>
             </div>
             <!--/ Re-rendering. -->
@@ -524,7 +439,7 @@
         <!--/ Animation. -->
 
         <!-- Concurrent Work. -->
-        <div class="columns is-centered">
+        <!-- <div class="columns is-centered">
           <div class="column is-full-width">
             <h2 class="title is-3">Related Links</h2>
 
@@ -570,7 +485,7 @@
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--/ Concurrent Work. -->
       </div>
     </section>
@@ -589,7 +504,7 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="content has-text-centered">
+        <!-- <div class="content has-text-centered">
           <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
             <i class="fas fa-file-pdf"></i>
           </a>
@@ -600,7 +515,7 @@
             disabled
           >
             <i class="fab fa-github"></i>
-          </a>
+          </a> -->
         </div>
         <div class="columns is-centered">
           <div class="column is-8">
