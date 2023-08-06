@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="DiffHOI: a novel HOI detection scheme grounded on a pre-trained text-image diffusion model"
-    />
-    <meta name="keywords" content="Human-Object Interaction Detection" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      DiffHOI: Boosting Human-Object Interaction Detection with Text-to-Image
-      Diffusion Model
-    </title>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/ns.html?id=GTM-M8BRW4B"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+<head>
+  <meta charset="utf-8" />
+  <meta name="description"
+    content="DiffHOI: a novel HOI detection scheme grounded on a pre-trained text-image diffusion model" />
+  <meta name="keywords" content="Human-Object Interaction Detection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    DiffHOI: Boosting Human-Object Interaction Detection with Text-to-Image
+    Diffusion Model
+  </title>
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/ns.html?id=GTM-M8BRW4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      gtag("js", new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-      gtag("config", "G-PYVRSFMDRL");
-    </script>
+    gtag("js", new Date());
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet"
-    />
+    gtag("config", "G-PYVRSFMDRL");
+  </script>
 
-    <link rel="stylesheet" href="./static/css/bulma.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-    />
-    <link rel="stylesheet" href="./static/css/index.css" />
-    <link rel="icon" href="./static/images/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
-  </head>
-  <body>
-    <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="icon" href="./static/images/favicon.svg" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a
           role="button"
@@ -66,7 +57,7 @@
           <span aria-hidden="true"></span>
         </a>
       </div> -->
-      <!-- <div class="navbar-menu">
+  <!-- <div class="navbar-menu">
         <div class="navbar-start" style="flex-grow: 1; justify-content: center">
           <a class="navbar-item" href="https://keunhong.com">
             <span class="icon">
@@ -93,85 +84,69 @@
           </div>
         </div>
       </div> -->
-    </nav>
+  </nav>
 
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              DiffHOI: Boosting Human-Object Interaction Detection with
+              Text-to-Image Diffusion Model
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://yangjie-cv.github.io/">Jie Yang</a><sup>1,2*†</sup>,</span>
+              <span class="author-block">
+                <a href="">Bingliang Li</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="">Fengyu Yang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ailingzeng.site/">Ailing Zeng</a><sup>2‡</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.leizhang.org/">Lei Zhang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://www.zhangruimao.site/">Ruimao Zhang</a><sup>1‡</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shenzhen Research Institute of Big Data, The
+                Chinese University of Hong Kong, Shenzhen,</span>
+              <span class="author-block"><sup>2</sup>International Digital Economy Academy
+                (IDEA)</span>
+              <!-- small font size -->
+              <span class="author-block" , style="font-size: 0.8em"><sup>*</sup>Equal contribution. <sup>†</sup>This
+                work was
+                done when Jie Yang was intern at IDEA.
+                <sup>‡</sup>Corresponding authors</span>
+            </div>
+
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">
-                DiffHOI: Boosting Human-Object Interaction Detection with
-                Text-to-Image Diffusion Model
-              </h1>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="https://yangjie-cv.github.io/">Jie Yang</a
-                  ><sup>1,2*†</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="">Bingliang Li</a><sup>1*</sup>,</span
-                >
-                <span class="author-block">
-                  <a href="">Fengyu Yang</a><sup>1</sup>,
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2305.12252" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
                 </span>
-                <span class="author-block">
-                  <a href="https://ailingzeng.site/">Ailing Zeng</a
-                  ><sup>2‡</sup>,
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2305.12252" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
                 </span>
-                <span class="author-block">
-                  <a href="https://www.leizhang.org/">Lei Zhang</a><sup>2</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="http://www.zhangruimao.site/">Ruimao Zhang</a
-                  ><sup>1‡</sup>,
-                </span>
-              </div>
-
-              <div class="is-size-5 publication-authors">
-                <span class="author-block"
-                  ><sup>1</sup>Shenzhen Research Institute of Big Data, The
-                  Chinese University of Hong Kong, Shenzhen,</span
-                >
-                <span class="author-block"
-                  ><sup>2</sup>International Digital Economy Academy
-                  (IDEA)</span
-                >
-                <!-- small font size -->
-                <span class="author-block" , style="font-size: 0.8em"
-                  ><sup>*</sup>Equal contribution. <sup>†</sup>This work was
-                  done when Jie Yang was intern at IDEA.
-                  <sup>‡</sup>Corresponding authors</span
-                >
-              </div>
-
-              <div class="column has-text-centered">
-                <div class="publication-links">
-                  <!-- PDF Link. -->
-                  <span class="link-block">
-                    <a
-                      href="https://arxiv.org/pdf/2305.12252"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Paper</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a
-                      href="https://arxiv.org/abs/2305.12252"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
-                      <span>arXiv</span>
-                    </a>
-                  </span>
-                  <!-- Video Link. -->
-                  <!-- <span class="link-block">
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -180,18 +155,18 @@
                   <span>Video</span>
                 </a>
               </span> -->
-                  <!-- Code Link. -->
-                  <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/IDEA-Research/DiffHOI"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
+                    </span>
+                    <span>Code</span>
                   </a>
-              </span> -->
-                  <!-- Dataset Link. -->
-                  <!-- <span class="link-block">
+                </span>
+                <!-- Dataset Link. -->
+                <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -200,36 +175,33 @@
                   <span>Data</span>
                   </a>
               </span> -->
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-body">
-          <!-- images/f3/png -->
-          <!-- <div class="columns is-centered">
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- images/f3/png -->
+        <!-- <div class="columns is-centered">
             <div class="column is-8"> -->
-              <figure class="image">
-                <img
-                  src="./static/images/f3.png"
-                  alt="DiffHOI teaser image"
-                  width="100%"
-                />
-              </figure>
-            <!-- </div> -->
-          <h2 class="subtitle has-text-centered">
-            Overview of <i>DiffHOI</i>, comprising a pretrained human-object decoder, a novel interaction decoder, and CLIP-based object and interaction classifiers.
-          </h2>
-        </div>
+        <figure class="image">
+          <img src="./static/images/f3.png" alt="DiffHOI teaser image" width="100%" />
+        </figure>
+        <!-- </div> -->
+        <h2 class="subtitle has-text-centered">
+          Overview of <i>DiffHOI</i>, comprising a pretrained human-object decoder, a novel interaction decoder, and
+          CLIP-based object and interaction classifiers.
+        </h2>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- <section class="hero is-light is-small">
+  <!-- <section class="hero is-light is-small">
       <div class="hero-body">
         <div class="container">
           <div id="results-carousel" class="carousel results-carousel">
@@ -350,48 +322,48 @@
       </div>
     </section> -->
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                This paper investigates the problem of the current HOI detection
-                methods and introduces DiffHOI, a novel HOI detection scheme
-                grounded on a pre-trained text-image diffusion model, which
-                enhances the detector's performance via improved data diversity
-                and HOI representation. We demonstrate that the internal
-                representation space of a frozen text-to-image diffusion model
-                is highly relevant to verb concepts and their corresponding
-                context. Accordingly, we propose an adapter-style tuning method
-                to extract the various semantic associated representation from a
-                frozen diffusion model and CLIP model to enhance the human and
-                object representations from the pre-trained detector, further
-                reducing the ambiguity in interaction prediction. Moreover, to
-                fill in the gaps of HOI datasets, we propose SynHOI, a
-                class-balance, large-scale, and high-diversity synthetic dataset
-                containing over 140K HOI images with fully triplet annotations.
-                It is built using an automatic and scalable pipeline designed to
-                scale up the generation of diverse and high-precision
-                HOI-annotated data. SynHOI could effectively relieve the
-                long-tail issue in existing datasets and facilitate learning
-                interaction representations. Extensive experiments demonstrate
-                that DiffHOI significantly outperforms the state-of-the-art in
-                regular detection (i.e., 41.50 mAP) and zero-shot detection.
-                Furthermore, SynHOI can improve the performance of
-                model-agnostic and backbone-agnostic HOI detection, particularly
-                exhibiting an outstanding 11.55% mAP improvement in rare
-                classes.
-              </p>
-            </div>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              This paper investigates the problem of the current HOI detection
+              methods and introduces DiffHOI, a novel HOI detection scheme
+              grounded on a pre-trained text-image diffusion model, which
+              enhances the detector's performance via improved data diversity
+              and HOI representation. We demonstrate that the internal
+              representation space of a frozen text-to-image diffusion model
+              is highly relevant to verb concepts and their corresponding
+              context. Accordingly, we propose an adapter-style tuning method
+              to extract the various semantic associated representation from a
+              frozen diffusion model and CLIP model to enhance the human and
+              object representations from the pre-trained detector, further
+              reducing the ambiguity in interaction prediction. Moreover, to
+              fill in the gaps of HOI datasets, we propose SynHOI, a
+              class-balance, large-scale, and high-diversity synthetic dataset
+              containing over 140K HOI images with fully triplet annotations.
+              It is built using an automatic and scalable pipeline designed to
+              scale up the generation of diverse and high-precision
+              HOI-annotated data. SynHOI could effectively relieve the
+              long-tail issue in existing datasets and facilitate learning
+              interaction representations. Extensive experiments demonstrate
+              that DiffHOI significantly outperforms the state-of-the-art in
+              regular detection (i.e., 41.50 mAP) and zero-shot detection.
+              Furthermore, SynHOI can improve the performance of
+              model-agnostic and backbone-agnostic HOI detection, particularly
+              exhibiting an outstanding 11.55% mAP improvement in rare
+              classes.
+            </p>
           </div>
         </div>
-        <!--/ Abstract. -->
+      </div>
+      <!--/ Abstract. -->
 
-        <!-- Paper video. -->
-        <!-- <div class="columns is-centered has-text-centered">
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Video</h2>
             <div class="publication-video">
@@ -404,65 +376,56 @@
             </div>
           </div>
         </div> -->
-        <!--/ Paper video. -->
-      </div>
-    </section>
+      <!--/ Paper video. -->
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container is-max-desktop">
-    
-        <!-- Animation. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">SynHOI</h2>
-    
-            <!-- Re-rendering. -->
-            <h3 class="title is-4">Generated HOI image samples from our SynHOI dataset.</h3>
-            <!-- <div class="content has-text-justified">
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Animation. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">SynHOI</h2>
+
+          <!-- Re-rendering. -->
+          <h3 class="title is-4">Generated HOI image samples from our SynHOI dataset.</h3>
+          <!-- <div class="content has-text-justified">
               <p>
                 Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
                 viewpoint such as a stabilized camera by playing back the training deformations.
               </p>
             </div> -->
-            <div class="content has-text-centered">
-              <video
-                id="replay-video"
-                autoplay
-                loop
-                controls
-                muted
-                preload
-                playsinline
-                width="100%"
-              >
-                <source src="./static/videos/SynHOI_vis.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <!--/ Re-rendering. -->
-    
+          <div class="content has-text-centered">
+            <video id="replay-video" autoplay loop controls muted preload playsinline width="100%">
+              <source src="./static/videos/SynHOI_vis.mp4" type="video/mp4" />
+            </video>
           </div>
-        </div>
-        <!--/ Animation. -->
-    
-      </div>
-    </section>
-    
+          <!--/ Re-rendering. -->
 
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code>@article{yang2023boosting,
+        </div>
+      </div>
+      <!--/ Animation. -->
+
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{yang2023boosting,
           title={Boosting Human-Object Interaction Detection with Text-to-Image Diffusion Model},
           author={Yang, Jie and Li, Bingliang and Yang, Fengyu and Zeng, Ailing and Zhang, Lei and Zhang, Ruimao},
           journal={arXiv preprint arXiv:2305.12252},
           year={2023}
         }</code></pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <div class="container">
-        <!-- <div class="content has-text-centered">
+  <footer class="footer">
+    <div class="container">
+      <!-- <div class="content has-text-centered">
           <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
             <i class="fas fa-file-pdf"></i>
           </a>
@@ -474,11 +437,11 @@
           >
             <i class="fab fa-github"></i>
           </a> -->
-        </div>
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <p>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
                 This website is licensed under a
                 <a
                   rel="license"
@@ -486,17 +449,16 @@
                   >Creative Commons Attribution-ShareAlike 4.0 International
                   License</a
                 >.
-              </p>
-              <p>
-                Template from
-                <a href="https://github.com/nerfies/nerfies.github.io"
-                  >github.com/nerfies/nerfies.github.io</a
-                >
-              </p>
-            </div>
-          </div>
+              </p> -->
+          <p>
+            This website is created with this
+            <a href="https://github.com/nerfies/nerfies.github.io">template</a>
+          </p>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+    </div>
+  </footer>
+</body>
+
 </html>
