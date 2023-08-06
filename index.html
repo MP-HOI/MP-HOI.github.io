@@ -203,20 +203,20 @@
           <b>New SOTA</b>
         </h1>
         <div class="columns is-centered"></div>
-          <figure class="image" style="width: 100%;">
-            <img src="./static/images/HICO-DET.png" alt="Regular HOI Detection on HICO-DET"/>
-            <figcaption style="text-align: center;">Regular HOI Detection on HICO-DET</figcaption>
-          </figure>
-        </div>
-        <div class="columns is-centered">
-          <figure class="image" style="width: 60%;">
-            <img src="./static/images/HICO-DET-zero-shot.png" alt="Zero-shot HOI Detection on HICO-DET"/>
-            <figcaption style="text-align: center;">Zero-shot HOI Detection on HICO-DET</figcaption>
-          </figure>
-        </div>
-        
-        <!-- </div> -->
+        <figure class="image" style="width: 100%;">
+          <img src="./static/images/HICO-DET.png" alt="Regular HOI Detection on HICO-DET" />
+          <figcaption style="text-align: center;">Regular HOI Detection on HICO-DET</figcaption>
+        </figure>
       </div>
+      <div class="columns is-centered">
+        <figure class="image" style="width: 60%;">
+          <img src="./static/images/HICO-DET-zero-shot.png" alt="Zero-shot HOI Detection on HICO-DET" />
+          <figcaption style="text-align: center;">Zero-shot HOI Detection on HICO-DET</figcaption>
+        </figure>
+      </div>
+
+      <!-- </div> -->
+    </div>
     </div>
   </section>
 
@@ -408,9 +408,15 @@
           <h2 class="title is-3">SynHOI</h2>
           <div class="columns is-centered">
             <figure class="image" style="width: 100%;">
-              <img src="./static/images/fig_prompt.svg" alt="HOIPrompt Generation for SynHOI"/>
+              <img src="./static/images/fig_prompt.svg" alt="HOIPrompt Generation for SynHOI" />
               <figcaption style="text-align: center;">HOIPrompt Generation for SynHOI</figcaption>
             </figure>
+            <ul>
+              <li>&bull; <b>Large-scale.</b> SynHOI consists of 146, 772 images, 157, 358 person bounding boxes, 165, 423 object bounding boxes, and 282, 140 HOI triplet instances. It provides approximately four times the amount of training data compared to HICO-DET.</li>
+              <li>&bull; <b>Class-balance.</b> SynHOI can effectively address the long-tail issue in previous datasets, where 343 HOI categories have fewer than 50 images in HICO-DET. Combining SynHOI with HICO-DET reduces the number of HOI categories with fewer than 50 images to only three.</li>
+              <li>&bull; <b>High-diversity.</b> SynHOI exhibits a high level of diversity, offering a wide range of visually dis- tinct images.</li>
+              <li>&bull; <b>High-quality.</b> SynHOI showcases high-quality HOI annotations. First, we employ CLIPScore [54] to measure the similarity between the synthetic images and the corresponding HOI triplet prompts. The SynHOI dataset achieves a high CLIPScore of 0.805, indicating a faithful reflection of the HOI triplet information in the synthetic images.</li>
+            </ul>
           </div>
           <!-- Re-rendering. -->
           <h3 class="title is-4">Generated HOI image samples from our SynHOI dataset.</h3>
@@ -427,11 +433,11 @@
           </div>
           <div class="columns is-centered">
             <figure class="image" style="width: 100%;">
-              <img src="./static/images/synhoi.png" alt="Performance Improvements Using SynHOI"/>
+              <img src="./static/images/synhoi.png" alt="Performance Improvements Using SynHOI" />
               <figcaption style="text-align: center;">Performance Improvements Using SynHOI</figcaption>
             </figure>
           </div>
-          
+
 
         </div>
       </div>
