@@ -288,48 +288,47 @@
         </figure>
       </div>
       <h3 class="title is-4">Data Characteristics</h3>
-        <div class="columns is-centered">
+      <div class="columns is-centered">
 
-          <p>
-            <b>Large-scale.</b> SynHOI consists of 146, 772 images, 157, 358 person bounding boxes, 165,
-            423 object bounding boxes, and 282, 140 HOI triplet instances. It provides approximately four times
-            the
-            amount of training data compared to HICO-DET.<br>
-            <b>Class-balance.</b> SynHOI can effectively address the long-tail issue in previous
-            datasets,
-            where 343 HOI categories have fewer than 50 images in HICO-DET. Combining SynHOI with HICO-DET reduces
-            the number of HOI categories with fewer than 50 images to only three.<br>
-            <b>High-diversity.</b> SynHOI exhibits a high level of diversity, offering a wide range of
-            visually dis- tinct images.<br>
-            <b>High-quality.</b> SynHOI showcases high-quality HOI annotations. First, we employ
-            CLIPScore
-            to measure the similarity between the synthetic images and the corresponding HOI triplet prompts.
-            The SynHOI dataset achieves a high CLIPScore of 0.805, indicating a faithful reflection of the HOI
-            triplet information in the synthetic images.<br>
-          </p>
-        </div>
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Generated HOI image samples from our SynHOI dataset.</h3>
-        <!-- <div class="content has-text-justified">
+        <p>
+          <b>Large-scale.</b> SynHOI consists of 146, 772 images, 157, 358 person bounding boxes, 165,
+          423 object bounding boxes, and 282, 140 HOI triplet instances. It provides approximately four times
+          the
+          amount of training data compared to HICO-DET.<br>
+          <b>Class-balance.</b> SynHOI can effectively address the long-tail issue in previous
+          datasets,
+          where 343 HOI categories have fewer than 50 images in HICO-DET. Combining SynHOI with HICO-DET reduces
+          the number of HOI categories with fewer than 50 images to only three.<br>
+          <b>High-diversity.</b> SynHOI exhibits a high level of diversity, offering a wide range of
+          visually dis- tinct images.<br>
+          <b>High-quality.</b> SynHOI showcases high-quality HOI annotations. First, we employ
+          CLIPScore
+          to measure the similarity between the synthetic images and the corresponding HOI triplet prompts.
+          The SynHOI dataset achieves a high CLIPScore of 0.805, indicating a faithful reflection of the HOI
+          triplet information in the synthetic images.<br>
+        </p>
+      </div>
+      <!-- Re-rendering. -->
+      <h3 class="title is-4">Generated HOI image samples from our SynHOI dataset.</h3>
+      <!-- <div class="content has-text-justified">
               <p>
                 Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
                 viewpoint such as a stabilized camera by playing back the training deformations.
               </p>
             </div> -->
-        <div class="content has-text-centered">
-          <video id="replay-video" autoplay loop controls muted preload playsinline width="100%">
-            <source src="./static/videos/SynHOI_vis.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="columns is-centered">
-          <figure class="image" style="width: 100%;">
-            <img src="./static/images/synhoi.png" alt="Performance Improvements Using SynHOI" />
-            <figcaption style="text-align: center;">Performance Improvements Using SynHOI</figcaption>
-          </figure>
-        </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" autoplay loop controls muted preload playsinline width="100%">
+          <source src="./static/videos/SynHOI_vis.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="columns is-centered">
+        <figure class="image" style="width: 100%;">
+          <img src="./static/images/synhoi.png" alt="Performance Improvements Using SynHOI" />
+          <figcaption style="text-align: center;">Performance Improvements Using SynHOI</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
-
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
