@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="description"
-    content="DiffHOI: a novel HOI detection scheme grounded on a pre-trained text-image diffusion model" />
+    content="MP-HOI: a novel HOI detection scheme grounded on a pre-trained text-image diffusion model" />
   <meta name="keywords" content="Human-Object Interaction Detection" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>
-    DiffHOI: Boosting Human-Object Interaction Detection with Text-to-Image
+    MP-HOI: Boosting Human-Object Interaction Detection with Text-to-Image
     Diffusion Model
   </title>
 
@@ -92,17 +92,14 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              DiffHOI: Boosting Human-Object Interaction Detection with
-              Text-to-Image Diffusion Model
+              MP-HOI: Open-World Human-Object Interaction Detection via Multi-modal Prompts
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://yangjie-cv.github.io/">Jie Yang</a><sup>1,2*†</sup>,</span>
               <span class="author-block">
                 <a href="">Bingliang Li</a><sup>1*</sup>,</span>
-              <span class="author-block">
-                <a href="">Fengyu Yang</a><sup>1</sup>,
-              </span>
+
               <span class="author-block">
                 <a href="https://ailingzeng.site/">Ailing Zeng</a><sup>2‡</sup>,
               </span>
@@ -157,7 +154,7 @@
               </span> -->
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/IDEA-Research/DiffHOI"
+                  <a href="https://github.com/IDEA-Research/MP-HOI"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -190,11 +187,11 @@
         <!-- <div class="columns is-centered">
             <div class="column is-8"> -->
         <figure class="image">
-          <img src="./static/images/f3.png" alt="DiffHOI teaser image" width="100%" />
+          <img src="./static/images/model.png" alt="MP-HOI teaser image" width="100%" />
         </figure>
         <!-- </div> -->
         <h2 class="subtitle has-text-centered">
-          Overview of <i>DiffHOI</i>, comprising a pretrained human-object decoder, a novel interaction decoder, and
+          Overview of <i>MP-HOI</i>, comprising a pretrained human-object decoder, a novel interaction decoder, and
           CLIP-based object and interaction classifiers.
         </h2>
       </div>
@@ -205,13 +202,13 @@
         <div class="columns is-centered"></div>
         <figure class="image" style="width: 100%;">
           <img src="./static/images/HICO-DET.png" alt="Regular HOI Detection on HICO-DET" />
-          <figcaption style="text-align: center;">Regular HOI Detection on HICO-DET</figcaption>
+          <figcaption style="text-align: center;">Performance comparison on HICO-DET in terms of mAP (%). † indicates the models are fully fine-tuned on HICO-DET. The results highlighted in underlined represent state-of-the-art per-formance among expert models, which we primarily compare to.</figcaption>
         </figure>
       </div>
       <div class="columns is-centered">
         <figure class="image" style="width: 50%;">
-          <img src="./static/images/HICO-DET-zero-shot.png" alt="Zero-shot HOI Detection on HICO-DET" />
-          <figcaption style="text-align: center;">Zero-shot HOI Detection on HICO-DET</figcaption>
+          <img src="./static/images/VCOCO.png" alt="Zero-shot HOI Detection on HICO-DET" />
+          <figcaption style="text-align: center;">Performance comparison on V-COCO.</figcaption>
         </figure>
       </div>
 
@@ -227,34 +224,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-2">Abstract</h2>
           <div class="content has-text-justified">
-            <p>
-              This paper investigates the problem of the current HOI detection
-              methods and introduces DiffHOI, a novel HOI detection scheme
-              grounded on a pre-trained text-image diffusion model, which
-              enhances the detector's performance via improved data diversity
-              and HOI representation. We demonstrate that the internal
-              representation space of a frozen text-to-image diffusion model
-              is highly relevant to verb concepts and their corresponding
-              context. Accordingly, we propose an adapter-style tuning method
-              to extract the various semantic associated representation from a
-              frozen diffusion model and CLIP model to enhance the human and
-              object representations from the pre-trained detector, further
-              reducing the ambiguity in interaction prediction. Moreover, to
-              fill in the gaps of HOI datasets, we propose SynHOI, a
-              class-balance, large-scale, and high-diversity synthetic dataset
-              containing over 140K HOI images with fully triplet annotations.
-              It is built using an automatic and scalable pipeline designed to
-              scale up the generation of diverse and high-precision
-              HOI-annotated data. SynHOI could effectively relieve the
-              long-tail issue in existing datasets and facilitate learning
-              interaction representations. Extensive experiments demonstrate
-              that DiffHOI significantly outperforms the state-of-the-art in
-              regular detection (i.e., 41.50 mAP) and zero-shot detection.
-              Furthermore, SynHOI can improve the performance of
-              model-agnostic and backbone-agnostic HOI detection, particularly
-              exhibiting an outstanding 11.55% mAP improvement in rare
-              classes.
-            </p>
+            <p>In this paper, we develop <strong>MP-HOI</strong>, a powerful <strong>M</strong>ulti-modal <strong>P</strong>rompt-based <strong>HOI</strong> detector designed to leverage both textual descriptions for open-set generalization and visual exemplars for handling high ambiguity in descriptions, realizing HOI detection in the open world. Specifically, it integrates visual prompts into existing language-guided-only HOI detectors to handle situations where textual descriptions face difficulties in generalization and to address complex scenarios with high interaction ambiguity. To facilitate MP-HOI training, we build a large-scale HOI dataset named Magic-HOI, which gathers six existing datasets into a unified label space, forming over 186K images with 2.4K objects, 1.2K actions, and 20K HOI interactions. Furthermore, to tackle the long-tail issue within the Magic-HOI dataset, we introduce an automated pipeline for generating realistically annotated HOI images and present SynHOI, a high-quality synthetic HOI dataset containing 100K images. Leveraging these two datasets, MP-HOI optimizes the HOI task as a similarity learning process between multi-modal prompts and objects/interactions via a unified contrastive loss, to learn generalizable and transferable objects/interactions representations from large-scale data. MP-HOI could serve as a generalist HOI detector, surpassing the HOI vocabulary of existing expert models by more than 30 times. Concurrently, our results demonstrate that MP-HOI exhibits remarkable zero-shot capability in real-world scenarios and consistently achieves a new state-of-the-art performance across various benchmarks. Our project homepage is available at <a href="https://MP-HOI.github.io/">https://MP-HOI.github.io/</a>.</p>
           </div>
         </div>
       </div>
